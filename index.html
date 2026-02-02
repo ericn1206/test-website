@@ -100,6 +100,16 @@
         }
         .metric {
             text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+        .metric:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .metric:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        .metric:nth-child(3) {
+            animation-delay: 1s;
         }
         .metric-value {
             font-size: 32px;
@@ -108,6 +118,15 @@
         }
         .metric-label {
             color: #6B7280;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
         }
 
         /* Dashboard Preview */
@@ -123,18 +142,91 @@
         .dashboard-card {
             background: #F9FAFB;
             border-radius: 16px;
-            padding: 40px;
-            max-width: 800px;
+            padding: 25px;
+            max-width: 900px;
             margin: 0 auto;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .status-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #E5E7EB;
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #E5E7EB;
         }
-        .status-item:last-child {
-            border-bottom: none;
+        .dashboard-date {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1F2937;
         }
+        .dashboard-stats {
+            display: flex;
+            gap: 12px;
+            font-size: 13px;
+        }
+        .stat-badge {
+            background: #EEF2FF;
+            color: #4F46E5;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .schedule-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .schedule-item {
+            background: #fff;
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            border-left: 4px solid;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .schedule-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .schedule-time {
+            font-weight: 600;
+            color: #6B7280;
+            min-width: 70px;
+            font-size: 13px;
+        }
+        .schedule-content {
+            flex: 1;
+        }
+        .schedule-title {
+            font-weight: 600;
+            color: #1F2937;
+            margin-bottom: 2px;
+            font-size: 14px;
+        }
+        .schedule-details {
+            font-size: 12px;
+            color: #6B7280;
+        }
+        .schedule-tag {
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .meeting { border-left-color: #3B82F6; }
+        .meeting .schedule-tag { background: #DBEAFE; color: #1E40AF; }
+        .deadline { border-left-color: #EF4444; }
+        .deadline .schedule-tag { background: #FEE2E2; color: #991B1B; }
+        .focus-time { border-left-color: #8B5CF6; }
+        .focus-time .schedule-tag { background: #EDE9FE; color: #5B21B6; }
+        .task { border-left-color: #10B981; }
+        .task .schedule-tag { background: #D1FAE5; color: #065F46; }
+        .review { border-left-color: #F59E0B; }
+        .review .schedule-tag { background: #FEF3C7; color: #92400E; }
 
         /* Features Section */
         .features {
@@ -343,14 +435,78 @@
         <div class="container">
             <h2>Your Schedule at a Glance</h2>
             <div class="dashboard-card">
-                <div class="status-item">
-                    <strong>Next Meeting:</strong> Team Standup - 10:00 AM
+                <div class="dashboard-header">
+                    <div class="dashboard-date">Today - Monday, Feb 3</div>
+                    <div class="dashboard-stats">
+                        <span class="stat-badge">8 events</span>
+                        <span class="stat-badge">2.5hrs saved</span>
+                    </div>
                 </div>
-                <div class="status-item">
-                    <strong>Optimization Stats:</strong> 3 meetings rescheduled for better productivity
-                </div>
-                <div class="status-item">
-                    <strong>Time Saved:</strong> 3.5 hours this week
+                <div class="schedule-grid">
+                    <div class="schedule-item meeting">
+                        <div class="schedule-time">9:00 AM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Team Standup</div>
+                            <div class="schedule-details">Daily sync with engineering team • Zoom</div>
+                        </div>
+                        <span class="schedule-tag">Meeting</span>
+                    </div>
+                    <div class="schedule-item focus-time">
+                        <div class="schedule-time">10:00 AM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Deep Work - Feature Development</div>
+                            <div class="schedule-details">AI optimized 2hr focus block</div>
+                        </div>
+                        <span class="schedule-tag">Focus Time</span>
+                    </div>
+                    <div class="schedule-item task">
+                        <div class="schedule-time">12:00 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Lunch & Code Review</div>
+                            <div class="schedule-details">Review PR #234 from Sarah</div>
+                        </div>
+                        <span class="schedule-tag">Task</span>
+                    </div>
+                    <div class="schedule-item meeting">
+                        <div class="schedule-time">1:30 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Product Strategy Meeting</div>
+                            <div class="schedule-details">Q1 roadmap planning • Conference Room B</div>
+                        </div>
+                        <span class="schedule-tag">Meeting</span>
+                    </div>
+                    <div class="schedule-item deadline">
+                        <div class="schedule-time">3:00 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Sprint Deliverable Due</div>
+                            <div class="schedule-details">Complete user authentication module</div>
+                        </div>
+                        <span class="schedule-tag">Deadline</span>
+                    </div>
+                    <div class="schedule-item review">
+                        <div class="schedule-time">4:00 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Design Review</div>
+                            <div class="schedule-details">New dashboard mockups with design team</div>
+                        </div>
+                        <span class="schedule-tag">Review</span>
+                    </div>
+                    <div class="schedule-item task">
+                        <div class="schedule-time">5:00 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">Documentation Updates</div>
+                            <div class="schedule-details">Update API docs for v2.0 release</div>
+                        </div>
+                        <span class="schedule-tag">Task</span>
+                    </div>
+                    <div class="schedule-item meeting">
+                        <div class="schedule-time">5:30 PM</div>
+                        <div class="schedule-content">
+                            <div class="schedule-title">1:1 with Manager</div>
+                            <div class="schedule-details">Weekly check-in • 30 min</div>
+                        </div>
+                        <span class="schedule-tag">Meeting</span>
+                    </div>
                 </div>
             </div>
         </div>

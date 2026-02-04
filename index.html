@@ -54,19 +54,29 @@
             color: #4F46E5;
         }
         .btn {
-            background: #4F46E5;
-            color: #fff;
+            background: rgba(79, 70, 229, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #4F46E5;
             padding: 12px 24px;
-            border-radius: 8px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 500;
+            box-shadow: 0 8px 32px 0 rgba(79, 70, 229, 0.2);
+            transition: all 0.3s ease;
         }
         .btn:hover {
-            background: #4338CA;
+            background: rgba(79, 70, 229, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 12px 40px 0 rgba(79, 70, 229, 0.3);
+            transform: translateY(-2px);
         }
         .btn-outline {
-            background: transparent;
-            border: 2px solid #4F46E5;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(79, 70, 229, 0.3);
             color: #4F46E5;
         }
 
@@ -560,7 +570,7 @@
                         <li>Advanced AI scheduling</li>
                         <li>Team scheduling</li>
                     </ul>
-                    <a href="#" class="btn" style="background: #fff; color: #4F46E5;">Get Started</a>
+                    <a href="#" class="btn" style="background: rgba(255, 255, 255, 0.25); color: #fff; border: 1px solid rgba(255, 255, 255, 0.4);">Get Started</a>
                 </div>
                 <div class="pricing-card">
                     <h3>Enterprise</h3>

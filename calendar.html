@@ -36,59 +36,39 @@
 
         <!-- Left Sidebar -->
         <aside class="sidebar">
-            <!-- Mini Calendar -->
-            <div class="mini-calendar">
-                <div class="mini-cal-header">
-                    <h3>February 2026</h3>
-                    <div class="mini-cal-nav">
-                        <button class="icon-btn">‹</button>
-                        <button class="icon-btn">›</button>
-                    </div>
+            <!-- Time Usage Breakdown -->
+            <div class="time-usage">
+                <div class="time-usage-header">
+                    <h3>This Week</h3>
+                    <span class="time-usage-total">40 hrs</span>
                 </div>
-                <div class="mini-cal-grid">
-                    <div class="mini-cal-day">S</div>
-                    <div class="mini-cal-day">M</div>
-                    <div class="mini-cal-day">T</div>
-                    <div class="mini-cal-day">W</div>
-                    <div class="mini-cal-day">T</div>
-                    <div class="mini-cal-day">F</div>
-                    <div class="mini-cal-day">S</div>
-
-                    <div class="mini-cal-date muted">26</div>
-                    <div class="mini-cal-date muted">27</div>
-                    <div class="mini-cal-date muted">28</div>
-                    <div class="mini-cal-date muted">29</div>
-                    <div class="mini-cal-date muted">30</div>
-                    <div class="mini-cal-date muted">31</div>
-                    <div class="mini-cal-date">1</div>
-                    <div class="mini-cal-date">2</div>
-                    <div class="mini-cal-date">3</div>
-                    <div class="mini-cal-date">4</div>
-                    <div class="mini-cal-date">5</div>
-                    <div class="mini-cal-date today">6</div>
-                    <div class="mini-cal-date">7</div>
-                    <div class="mini-cal-date">8</div>
-                    <div class="mini-cal-date">9</div>
-                    <div class="mini-cal-date">10</div>
-                    <div class="mini-cal-date">11</div>
-                    <div class="mini-cal-date">12</div>
-                    <div class="mini-cal-date">13</div>
-                    <div class="mini-cal-date">14</div>
-                    <div class="mini-cal-date">15</div>
-                    <div class="mini-cal-date">16</div>
-                    <div class="mini-cal-date">17</div>
-                    <div class="mini-cal-date">18</div>
-                    <div class="mini-cal-date">19</div>
-                    <div class="mini-cal-date">20</div>
-                    <div class="mini-cal-date">21</div>
-                    <div class="mini-cal-date">22</div>
-                    <div class="mini-cal-date">23</div>
-                    <div class="mini-cal-date">24</div>
-                    <div class="mini-cal-date">25</div>
-                    <div class="mini-cal-date">26</div>
-                    <div class="mini-cal-date">27</div>
-                    <div class="mini-cal-date">28</div>
-                    <div class="mini-cal-date muted">1</div>
+                <div class="usage-bar">
+                    <div class="usage-segment meetings" style="width: 15%;"></div>
+                    <div class="usage-segment focus" style="width: 12%;"></div>
+                    <div class="usage-segment tasks" style="width: 8%;"></div>
+                    <div class="usage-segment free" style="width: 65%;"></div>
+                </div>
+                <div class="usage-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot meetings"></span>
+                        <span class="legend-label">Meetings</span>
+                        <span class="legend-value">6 hrs</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot focus"></span>
+                        <span class="legend-label">Focus</span>
+                        <span class="legend-value">5 hrs</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot tasks"></span>
+                        <span class="legend-label">Tasks</span>
+                        <span class="legend-value">3 hrs</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot free"></span>
+                        <span class="legend-label">Free</span>
+                        <span class="legend-value">26 hrs</span>
+                    </div>
                 </div>
             </div>
 
@@ -183,6 +163,7 @@
                     <div class="event" style="top: 10px; height: 80px;">
                         <div class="event-title">Team Standup</div>
                         <div class="event-time">9:00 - 9:30 AM</div>
+                        <div class="event-tooltip">Daily sync with the team to share progress and blockers.</div>
                     </div>
                 </div>
                 <div class="time-slot"></div>
@@ -199,6 +180,7 @@
                     <div class="event" style="top: 5px; height: 100px;">
                         <div class="event-title">Design Review</div>
                         <div class="event-time">10:00 - 11:00 AM</div>
+                        <div class="event-tooltip">Review latest mockups and gather feedback from the design team.</div>
                     </div>
                 </div>
                 <div class="time-slot"></div>
@@ -228,6 +210,7 @@
                     <div class="event" style="top: 5px; height: 110px;">
                         <div class="event-title">Client Meeting</div>
                         <div class="event-time">1:00 - 2:00 PM</div>
+                        <div class="event-tooltip">Discuss project milestones and next steps with the client.</div>
                     </div>
                 </div>
                 <div class="time-slot"></div>
@@ -244,6 +227,7 @@
                     <div class="event" style="top: 5px; height: 50px;">
                         <div class="event-title">Focus Time</div>
                         <div class="event-time">2:00 - 4:00 PM</div>
+                        <div class="event-tooltip">Heads-down work session — no meetings or interruptions.</div>
                     </div>
                 </div>
                 <div class="time-slot"></div>

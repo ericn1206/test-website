@@ -105,14 +105,33 @@
                     <span>Settings</span>
                 </button>
             </nav>
+
+            <!-- AI Chatbot -->
+            <div class="ai-chat">
+                <div class="section-title">AI Assistant</div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="chat-bubble bot">
+                        Hi! I can help you manage your schedule. Try asking me something.
+                    </div>
+                </div>
+                <div class="chat-input-wrap">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Ask Skedai..." />
+                    <button class="chat-send" id="chatSend">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </aside>
 
         <!-- Main Calendar Area -->
         <main class="calendar-main">
             <div class="calendar-toolbar">
                 <div class="toolbar-left">
-                    <button class="icon-btn">‹</button>
-                    <button class="icon-btn">›</button>
+                    <button class="icon-btn">&#8249;</button>
+                    <button class="icon-btn">&#8250;</button>
                     <h2 class="calendar-title">Feb 2 - 8, 2026</h2>
                 </div>
                 <div class="view-switcher">
@@ -122,9 +141,9 @@
                 </div>
             </div>
 
-            <div class="calendar-grid">
-                <!-- Time Column -->
-                <div></div>
+            <!-- Sticky day headers -->
+            <div class="calendar-header-row">
+                <div class="header-time-col"></div>
                 <div class="day-header">
                     <div class="day-name">Sun</div>
                     <div class="day-date">2</div>
@@ -153,8 +172,47 @@
                     <div class="day-name">Sat</div>
                     <div class="day-date">8</div>
                 </div>
+            </div>
 
-                <!-- Time Slots (9 AM - 6 PM sample) -->
+            <div class="calendar-scroll" id="calendarScroll">
+            <div class="calendar-grid">
+                <!-- 12 AM -->
+                <div class="time-label">12 AM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 1 AM -->
+                <div class="time-label">1 AM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 2 AM -->
+                <div class="time-label">2 AM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 3 AM -->
+                <div class="time-label">3 AM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 4 AM -->
+                <div class="time-label">4 AM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 5 AM -->
+                <div class="time-label">5 AM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 6 AM -->
+                <div class="time-label">6 AM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 7 AM -->
+                <div class="time-label">7 AM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 8 AM -->
+                <div class="time-label" id="scroll-target">8 AM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 9 AM -->
                 <div class="time-label">9 AM</div>
                 <div class="time-slot"></div>
                 <div class="time-slot"></div>
@@ -170,6 +228,7 @@
                 <div class="time-slot"></div>
                 <div class="time-slot"></div>
 
+                <!-- 10 AM -->
                 <div class="time-label">10 AM</div>
                 <div class="time-slot"></div>
                 <div class="time-slot"></div>
@@ -185,24 +244,15 @@
                 </div>
                 <div class="time-slot"></div>
 
+                <!-- 11 AM -->
                 <div class="time-label">11 AM</div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
 
+                <!-- 12 PM -->
                 <div class="time-label">12 PM</div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
 
+                <!-- 1 PM -->
                 <div class="time-label">1 PM</div>
                 <div class="time-slot"></div>
                 <div class="time-slot"></div>
@@ -218,6 +268,7 @@
                 <div class="time-slot"></div>
                 <div class="time-slot"></div>
 
+                <!-- 2 PM -->
                 <div class="time-label">2 PM</div>
                 <div class="time-slot"></div>
                 <div class="time-slot"></div>
@@ -233,37 +284,67 @@
                 <div class="time-slot"></div>
                 <div class="time-slot"></div>
 
+                <!-- 3 PM -->
                 <div class="time-label">3 PM</div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
 
+                <!-- 4 PM -->
                 <div class="time-label">4 PM</div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
 
+                <!-- 5 PM -->
                 <div class="time-label">5 PM</div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
-                <div class="time-slot"></div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 6 PM -->
+                <div class="time-label">6 PM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 7 PM -->
+                <div class="time-label">7 PM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 8 PM -->
+                <div class="time-label">8 PM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 9 PM -->
+                <div class="time-label">9 PM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 10 PM -->
+                <div class="time-label">10 PM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+
+                <!-- 11 PM -->
+                <div class="time-label">11 PM</div>
+                <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
             </div>
         </main>
 
         <!-- Right Panel -->
         <aside class="right-panel">
+            <!-- Live Timer -->
+            <div class="panel-section timer-section">
+                <div class="timer-status">
+                    <span class="timer-pulse"></span>
+                    <span class="timer-label">In Progress</span>
+                </div>
+                <div class="timer-task-name">Team Standup</div>
+                <div class="timer-countdown" id="timerCountdown">14:32</div>
+                <div class="timer-bar-track">
+                    <div class="timer-bar-fill" id="timerBar" style="width: 52%;"></div>
+                </div>
+                <div class="timer-meta">ends at 9:30 AM</div>
+
+                <div class="timer-next">
+                    <div class="timer-next-label">Up Next</div>
+                    <div class="timer-next-name">Design Review</div>
+                    <div class="timer-next-time">Friday at 10:00 AM</div>
+                </div>
+            </div>
+
             <div class="panel-section">
                 <h3>Upcoming</h3>
                 <div class="task-list">
@@ -301,5 +382,71 @@
             </div>
         </aside>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Auto-scroll calendar to 8 AM
+            var scrollContainer = document.getElementById('calendarScroll');
+            var target = document.getElementById('scroll-target');
+            if (scrollContainer && target) {
+                scrollContainer.scrollTop = target.offsetTop;
+            }
+
+            // Ticking countdown timer
+            var totalSeconds = 14 * 60 + 32;
+            var totalDuration = 30 * 60;
+            var countdownEl = document.getElementById('timerCountdown');
+            var barEl = document.getElementById('timerBar');
+
+            setInterval(function () {
+                if (totalSeconds <= 0) return;
+                totalSeconds--;
+                var m = Math.floor(totalSeconds / 60);
+                var s = totalSeconds % 60;
+                countdownEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+                var elapsed = totalDuration - totalSeconds;
+                var pct = Math.min((elapsed / totalDuration) * 100, 100);
+                barEl.style.width = pct + '%';
+            }, 1000);
+
+            // Simple chatbot interaction
+            var chatInput = document.getElementById('chatInput');
+            var chatSend = document.getElementById('chatSend');
+            var chatMessages = document.getElementById('chatMessages');
+
+            var responses = [
+                "You have 3 meetings scheduled this week.",
+                "Your next free block is tomorrow from 11 AM to 1 PM.",
+                "Would you like me to reschedule your Focus Time?",
+                "You're spending 15% of your week in meetings.",
+                "I can help you find time for a new event!"
+            ];
+
+            function sendMessage() {
+                var text = chatInput.value.trim();
+                if (!text) return;
+
+                var userBubble = document.createElement('div');
+                userBubble.className = 'chat-bubble user';
+                userBubble.textContent = text;
+                chatMessages.appendChild(userBubble);
+                chatInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                setTimeout(function () {
+                    var botBubble = document.createElement('div');
+                    botBubble.className = 'chat-bubble bot';
+                    botBubble.textContent = responses[Math.floor(Math.random() * responses.length)];
+                    chatMessages.appendChild(botBubble);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 600);
+            }
+
+            chatSend.addEventListener('click', sendMessage);
+            chatInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') sendMessage();
+            });
+        });
+    </script>
 </body>
 </html>
